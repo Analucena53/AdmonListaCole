@@ -1,16 +1,6 @@
 
-import { useState, useEffect } from "react";
-
-const [user, setUser] = useState({
-    nameList: '',
-    name: '',
-    lastName: '',
-});
-const [userList, setUserList] = useState([]);
-const [listTitle, setListTitle] = useState('');
-
 //para usar los hooks hay que importarlos
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 
 const UserList = () => {
 
