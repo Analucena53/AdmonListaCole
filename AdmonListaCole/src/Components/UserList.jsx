@@ -26,27 +26,28 @@ const UserList = () => {
 
     function handlelistNameChange(e) {
         setUser({ ...user, nameList: e.target.value });
-    };
-
+    }
+    
     function handleNameChange(e) {
         setUser({ ...user, name: e.target.value });
-    };
-
+    }
+    
     function handlelastNameChange(e) {
         setUser({ ...user, lastName: e.target.value });
-    };
-
+    }
+    
     function handlelastName2Change(e) {
         setUser({ ...user, lastName2: e.target.value });
-    };
-
-    function handleemailChange(e) {
-        setUser({...user, email: e.target.value })
-    };
-
-    function handletlfChange(e) {
-        setUser({...user, tlf: e.target.value })
     }
+    
+    function handleemailChange(e) {
+        setUser({ ...user, email: e.target.value });
+    }
+    
+    function handletlfChange(e) {
+        setUser({ ...user, tlf: e.target.value });
+    }
+    
 
     
     //a tráves del evento de click (onclick) del botón se ejecuta esta función, que guarda en un array la variable user mediante el
@@ -60,6 +61,7 @@ const UserList = () => {
 
     //Limpiar el formulario
         setUser({
+            nameList:'',
             name: '',
             lastName: '',
             lastName2:'',
@@ -80,44 +82,47 @@ const UserList = () => {
     return (
         <>
 
-        <nav class="contentNav">
-            <img class="logo" src={logoCole} alt="logo colegio Arrabal"/>
-            <button class="buttonnav" onclick="addList()">+Lista</button>
-            <button class="buttonnav" onclick="editList()">Editar</button>
-            <button class="buttonnav" onclick="delet()">Eliminar</button>
-            <img class="conf" src={conf} alt="configuración"></img>
+        <nav className="contentNav">
+            <img className="logo" src={logoCole} alt="logo colegio Arrabal"/>
+            <button className="buttonnav" onclick="addList()">+Lista</button>
+            <button className="buttonnav" onclick="editList()">Editar</button>
+            <button className="buttonnav" onclick="delet()">Eliminar</button>
+            <img className="conf" src={conf} alt="configuración"></img>
         </nav>
 
-            <label>
+            <label className='list'>
                 <h2>Lista:</h2>
-                <input type="text" id="textUserlistName" name="ListName" value={user.nameList} onChange={handlelistNameChange} />
+                <input type="text" id="textUserlistName" name="ListName" value={user.nameList} onChange={handlelistNameChange} required/>
             </label>
 
-            <form class="formList">
-            <label>
+            <form className="formList">
+            <label className='labelForm'>
                 <h2>Nombre</h2>
-                <input type="text" id="textUserName" name="userName" value={user.name} onChange={handleNameChange} />
+                <input className='inputForm' type="text" id="textUserName" name="userName" value={user.name} onChange={handleNameChange} required/>
             </label>
 
-            <label>
+            <label className='labelForm'>
                 <h2>Apellido1</h2>
-                <input type="text" id="textUserlastName" name="userLastname" value={user.lastName} onChange={handlelastNameChange} />
+                <input className="inputForm" type="text" id="textUserlastName" name="userLastname" value={user.lastName} onChange={handlelastNameChange} required/>
             </label>
-            <label>
+
+            <label className='labelForm'>
                 <h2>Apellido2</h2>
-                <input type="text" id="textUserlastName2" name="userLastname2" value={user.lastName2} onChange={handlelastName2Change} />
+                <input className="inputForm" type="text" id="textUserlastName2" name="userLastname2" value={user.lastName2} onChange={handlelastName2Change} required/>
             </label>
-            <label>
+
+            <label className='labelForm'>
                 <h2>Email</h2>
-                <input type="text" id="textUserEmail" name="userEmail" value={user.email} onChange={handleemailChange} />
+                <input className="inputForm" type="text" id="textUserEmail" name="userEmail" value={user.email} onChange={handleemailChange} required/>
             </label>
-            <label>
+
+            <label className='labelForm'>
                 <h2>Teléfono</h2>
-                <input type="text" id="textUserTlf" name="userTlf" value={user.tlf} onChange={handletlfChange} />
+                <input className="inputForm" type="text" id="textUserTlf" name="userTlf" value={user.tlf} onChange={handletlfChange} required/>
             </label>
 
 
-            <button class="buttonForm" onClick={handleAddUserToList}>Enviar</button>
+            <button className="buttonForm" onClick={handleAddUserToList}>Enviar</button>
             </form>
 
             {listTitle && (
@@ -126,7 +131,7 @@ const UserList = () => {
                     <ol>
                         {userList.map((user, index) => (
                         <li key={index}>
-                            {user.name} {user.lastName} {user.lastName2} {user.email} {user.tlf}
+                            {user.nameList} {user.name} {user.lastName} {user.lastName2} {user.email} {user.tlf}
                         </li>
                         ))}
                     </ol>
