@@ -1,28 +1,34 @@
 import logoCole from './images/logoCole.png';
 import conf from './images/conf.svg';
 
-//para usar los hooks hay que importarlos
 import { useState, } from "react";
+import { UserService } from '../userService';
 
 const UserList = () => {
 
-    //hemos usado useState para crear y actualizar las variables de usuario y de la lista de usuarios. "user" la inicializamos
-    //en un string vacío. "userList" inicializa en un array vacío.
-    const [user, setUser] = useState({
+    const [user, setUser] = useState(
+        {
         nameList: '',
-        name: '',
-        lastName: '',
-        lastName2:'',
-        email:'',
-        tlf:''
-    });
+        userName: '',
+        userSurname: '',
+        userSurname2:'',
+        userEmail:'',
+        userTlf:''
+        }
+    );
+
     const [userList, setUserList] = useState([]);
+
+    async function getData(){
+        let users = await UserService.getAllUsers();
+        setUserList(users)
+        }
     
+        getData();
+
     //nuevo estado para el titulo
     const [listTitle, setListTitle] = useState('');
 
-    //esta función coge el valor de "user" usando "setUser" y le asigna el valor del input, siendo el evento que dispara esta función
-    //cualquier cambio que un usuario haga en el input al editarlo
 
     function handlelistNameChange(e) {
         setUser({ ...user, nameList: e.target.value });
@@ -103,22 +109,22 @@ const UserList = () => {
 
             <label className='labelForm'>
                 <h2>Apellido1</h2>
-                <input className="inputForm" type="text" id="textUserlastName" name="userLastname" value={user.lastName} onChange={handlelastNameChange} required/>
+                <input className="inputForm" type="text" id="textUserlastName" name="userLastname" value={user.userSurname} onChange={handlelastNameChange} required/>
             </label>
 
             <label className='labelForm'>
                 <h2>Apellido2</h2>
-                <input className="inputForm" type="text" id="textUserlastName2" name="userLastname2" value={user.lastName2} onChange={handlelastName2Change} required/>
+                <input className="inputForm" type="text" id="textUserlastName2" name="userLastname2" value={user.userSurname2} onChange={handlelastName2Change} required/>
             </label>
 
             <label className='labelForm'>
                 <h2>Email</h2>
-                <input className="inputForm" type="text" id="textUserEmail" name="userEmail" value={user.email} onChange={handleemailChange} required/>
+                <input className="inputForm" type="text" id="textUserEmail" name="userEmail" value={user.userEmail} onChange={handleemailChange} required/>
             </label>
 
             <label className='labelForm'>
                 <h2>Teléfono</h2>
-                <input className="inputForm" type="text" id="textUserTlf" name="userTlf" value={user.tlf} onChange={handletlfChange} required/>
+                <input className="inputForm" type="text" id="textUserTlf" name="userTlf" value={user.userTlf} onChange={handletlfChange} required/>
             </label>
 
 
@@ -131,7 +137,7 @@ const UserList = () => {
                     <ol>
                         {userList.map((user, index) => (
                         <li key={index}>
-                            {user.nameList} {user.name} {user.lastName} {user.lastName2} {user.email} {user.tlf}
+                            {user.nameList} {user.userName} {user.userSurname} {user.userSurname2} {user.userEmailmail} {user.userTlf}
                         </li>
                         ))}
                     </ol>
