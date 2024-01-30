@@ -32,6 +32,11 @@ const UserList = () => {
     };
     
     async function handleAddUserToList() {
+        if (!user.userName || !user.userSurname || !user.userSurname2 || !user.userEmail || !user.userTlf)
+        {
+            alert('Por favor, complete todos los campos del formulario.');
+            return;
+        }
         await UserService.submitUser(user);
     
 
@@ -44,7 +49,6 @@ const UserList = () => {
         });
     }
     
-
 
     return (
         <>
@@ -59,7 +63,8 @@ const UserList = () => {
 
         <h2 className='list'>Lista:</h2>
             
-        <form className="formList">
+        <div className='content'>   
+            <form className="formList">
             <label className='labelForm'>
                 <h2>Nombre</h2>
                 <input className='inputForm' type="text" id="textUserName" name="userName" value={user.userName} onChange={handleNameChange} required/>
@@ -94,19 +99,17 @@ const UserList = () => {
                 {
                     userList.map((user, index) => (
                             <li key={index}>
-                                {user.userName} {user.userSurname} {user.userSurname2} {user.userEmailmail} {user.userTlf}
+                                Nombre: {user.userName} {user.userSurname} {user.userSurname2}. Email: {user.userEmail} Teléfono: {user.userTlf}.
                             </li>
                             ))
                 }
                 </ul> 
             </section>  
-            </>
+        </div> 
+        </>
             )
 
 }
-
-
-
 
 
 export default UserList;

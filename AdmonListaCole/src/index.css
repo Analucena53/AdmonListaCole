@@ -52,6 +52,12 @@ body{
     margin-top: 30px;
 }
 
+.content{ 
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
 .formList{
     font-family: 'Acme', sans-serif;
     background-color: rgba(255, 226, 167, 1);
@@ -68,7 +74,9 @@ body{
     display: block;
 }
 
-.inputForm{ width: 100%;}
+.inputForm{ 
+    width: 100%;
+}
 
 .buttonForm {
     display: block;
@@ -86,11 +94,39 @@ body{
     border: 2px solid rgb(0, 0, 0);
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .resultForm{
-    background-color: rgba(255, 169, 184, 1);;
+    background-color: rgba(255, 169, 184, 1);
+    font-family: 'Acme', sans-serif;
+    margin-right: 30px;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    width: 40%;
+    padding: 30px;
 }
 
+.resultForm ul {
+    list-style-type: none;
+    padding: 0;
+}
 
+.resultForm li {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.resultForm li:hover {
+    background-color: rgba(179, 224, 245, 1);
+}
+
+.buttonForm:hover {
+    background-color: rgba(255, 169, 184, 1);
+    color: #fff;
+}
