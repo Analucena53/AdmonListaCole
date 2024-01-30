@@ -1,4 +1,4 @@
-import UserList from "../components/UserList";
+import UserList from "../Components/UserList.jsx";
 
 function UserListView(){
     return(
