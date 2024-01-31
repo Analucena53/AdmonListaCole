@@ -17,5 +17,6 @@ export const UserService = {
         },
         async submitUser(newUser){
             await apiClient.post("/users", newUser)
-        } 
+        }
 }
+

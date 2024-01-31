@@ -21,12 +21,10 @@ const UserList = () => {
     async function getData(){
         let users = await UserService.getAllUsers();
         setUserList(users)  
-
-        }
+    };
     
         getData();
 
-    
     function handleNameChange(e) {
         setUser({...user, [e.target.name]:e.target.value})
     };
@@ -39,7 +37,6 @@ const UserList = () => {
         }
         await UserService.submitUser(user);
     
-
         setUser({
             userName: "",
             userSurname:"",
@@ -48,21 +45,20 @@ const UserList = () => {
             userTlf:""
         });
     }
-    
 
     return (
         <>
 
         <nav className="contentNav">
             <img className="logo" src={logoCole} alt="logo colegio Arrabal"/>
-            <button className="buttonnav" onClick="addList()">+Lista</button>
-            <button className="buttonnav" onClick="editList()">Editar</button>
-            <button className="buttonnav" onClick="delet()">Eliminar</button>
+            <label className='listTitle'>
+                <h2>Lista</h2>
+                <input className='inputTitle' type="text" id="textTitleList" name="titleList" value={user.titleList} onChange={handleNameChange} required/>
+            </label>
             <img className="conf" src={conf} alt="configuración"></img>
         </nav>
 
-        <h2 className='list'>Lista:</h2>
-            
+
         <div className='content'>   
             <form className="formList">
             <label className='labelForm'>
@@ -95,11 +91,15 @@ const UserList = () => {
             </form>
 
             <section className='resultForm'>  
-                <ul>       
+                <ul className='ulResultForm'>       
                 {
                     userList.map((user, index) => (
-                            <li key={index}>
+                            <li className="liResultForm" key={index}>
                                 Nombre: {user.userName} {user.userSurname} {user.userSurname2}. Email: {user.userEmail} Teléfono: {user.userTlf}.
+                                <div className='bottonsResultForm'>
+                                    <button className='buttonDelete' onClick={() => handleRemoveUser(index)}>Eliminar</button>
+                                    <button className='buttonEdit' onClick={() => handleEditUser(index)}>Editar</button>
+                                </div>
                             </li>
                             ))
                 }
