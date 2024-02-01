@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 const apiClient = axios.create({
@@ -15,8 +16,19 @@ export const UserService = {
             let allUsers = response.data
             return allUsers
         },
+
         async submitUser(newUser){
             await apiClient.post("/users", newUser)
+        },
+
+        async deleteUser(userId){
+            try {
+                await apiClient.delete(`/users/${userId}`);
+            } catch (error) {
+                console.error('Error al eliminar el usuario:', error);
+                throw error;
+            }
         }
-}
+
+};
 

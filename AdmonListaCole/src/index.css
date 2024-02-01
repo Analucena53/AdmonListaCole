@@ -1,92 +1,85 @@
-
 :root {
-    font-family: 'Acme', sans-serif;
-    background-color: rgba(179, 224, 245, 1);
     margin: 0;
     width: 100%;
 }
 
-body{
+body {
     background-color: rgba(179, 224, 245, 1);
 }
 
-.logo{
-    width: 15%;
-    height: 15%;
-    border-radius: 50%;
-    margin-top: 30px;
-}
-
-.contentNav{
+.contentNav {
     font-family: 'Acme', sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 95%;
-    margin-left:30px;
+    width: 85%;
+    margin-left: 30px;
     margin-right: 30px;
+    margin-bottom: 30px;
 }
 
-.buttonnav {
-    background-color: rgba(255, 169, 184, 1);
-    width: 200px;
+.logo {
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
+.conf {
+    width: 50px;
     height: 50px;
-    color: #fff;
-    padding: 10px 20px;
-    font-family: 'acme', sans-serif;
-    font-size: 20px;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 30px;
-    cursor: pointer;
 }
 
-.conf{
-    width: 70px;
-    height: 70px;
+.inputTitle{
+    font-size: 22px;
 }
 
-.list{ 
+.titleEvent{ font-size: 20px;}
+
+.list {
     font-family: 'Acme', sans-serif;
     padding-left: 5%;
     margin-top: 30px;
 }
 
-.content{ 
+.content {
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
 }
 
-.formList{
+.formList {
     font-family: 'Acme', sans-serif;
     background-color: rgba(255, 226, 167, 1);
     margin-left: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
+    margin-right: 30px;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 30px;
     width: 30%;
     padding: 30px;
 }
 
-.labelForm{
+.headLabel {
+    font-size: 24px;
+}
+
+.labelForm {
     display: block;
 }
 
-.inputForm{ 
+.inputForm {
     width: 100%;
+    margin-bottom: 7px;
 }
 
-.liResultForm{
-    display: flex;
-    justify-content:space-between;
+.resultForm {
     margin-bottom: 10px;
     background-color: #fff;
     border-radius: 5px;
     border: 1px solid black;
     padding: 10px;
-
 }
 
 .buttonForm {
@@ -107,9 +100,10 @@ body{
     cursor: pointer;
 }
 
-.resultForm{
+.resultForm {
     background-color: rgba(255, 169, 184, 1);
     font-family: 'Acme', sans-serif;
+    font-size: 22px;
     margin-right: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -117,49 +111,64 @@ body{
     padding-bottom: 30px;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 30px;
-    width: 40%;
-    padding: 30px;
+    width: 800px;
+    padding: -1px;
+    border-collapse: separate;
 }
 
-.resultForm ul {
-    list-style-type: none;
+.tableResult {
+    width: 100%;
+}
+
+.headResult {
+    background-color: rgba(255, 169, 184, 1);
+    text-align: center;
+    font-size: 24px;
+}
+
+.thResult {
+    text-align: center;
+}
+
+.tdResult{
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid rgba(255, 169, 184, 1);
     padding: 0;
 }
 
-
-.buttonDelete{
-    background-color: rgba(255, 226, 167, 1);
-    width: 80px;
-    height: 35px;
-    color: #000000;
-    padding: 5px;
-    margin-right: 10px;
-    font-family: 'acme', sans-serif;
-    font-size: 16px;
-    text-shadow: 2px 2px 2px rgb(255, 255, 255);
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.buttonEdit{
-    background-color: rgba(255, 226, 167, 1);
-    width: 80px;
-    height: 35px;
-    color: #000000;
-    padding: 5px;
-    font-family: 'acme', sans-serif;
-    font-size: 16px;
-    text-shadow: 2px 2px 2px rgb(255, 255, 255);
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.bottonsResultForm{
+.bottonsResultForm {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+}
+
+.buttonDelete {
+    background-color: rgba(255, 226, 167, 1);
+    width: 80px;
+    height: 35px;
+    color: #000000;
+    padding: 5px;
+    font-family: 'acme', sans-serif;
+    font-size: 16px;
+    text-shadow: 2px 2px 2px rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.buttonEdit {
+    background-color: rgba(255, 226, 167, 1);
+    width: 80px;
+    height: 35px;
+    color: #000000;
+    padding: 5px;
+    font-family: 'acme', sans-serif;
+    font-size: 16px;
+    text-shadow: 2px 2px 2px rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .buttonForm:hover {
@@ -169,4 +178,21 @@ body{
 
 .resultForm li:hover {
     background-color: rgba(179, 224, 245, 1);
+}
+
+@media (max-width: 935px){
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resultForm{
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .formList{
+        width: 50%;
+    }
+
 }
